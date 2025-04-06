@@ -32,7 +32,7 @@ export default function Navbar() {
       ],
     },
     { name: "Admissions", path: "/admissions" },
-    { name: "News & Events", path: "/events" },
+    { name: "News & Events", path: "/newsevents" },
     { name: "Contact", path: "/contact" },
   ];
 
