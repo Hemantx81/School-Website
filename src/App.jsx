@@ -11,10 +11,11 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import NewsEventsPage from "./pages/NewsEventsPage";
 import AdmissionsPage from "./pages/AdmissionPage";
+import About from "./pages/About";
 import HistoryPage from "./pages/HistoryPage";
 import MissionPage from "./pages/MissionPage";
 import FacilitiesPage from "./pages/FacilitiesPage";
-import About from "./pages/About";
+import Academics from "./pages/Academics";
 import Curriculum from "./pages/Curriculum";
 import Departments from "./pages/Departments";
 import Calendar from "./pages/Calender";
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/admissions" element={<AdmissionsPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/academics" element={<Academics />} />
           <Route path="/academics/curriculum" element={<Curriculum />} />
           <Route path="/academics/departments" element={<Departments />} />
           <Route path="/academics/calendar" element={<Calendar />} />
