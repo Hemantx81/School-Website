@@ -13,8 +13,12 @@ import {
 import { FiArrowRight } from "react-icons/fi";
 import { IoMdSchool } from "react-icons/io";
 import { GiTeacher } from "react-icons/gi";
+// import { useTheme } from "../context/Themecontext";
+
+// const { theme } = useTheme();
 
 export default function Home() {
+  // const [theme, toggleTheme] = useTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
@@ -137,7 +141,7 @@ export default function Home() {
   };
 
   return (
-    <div className="overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white">
       {/* Hero Section with Animated Slideshow */}
       <section className="relative h-[80vh] overflow-hidden">
         {slides.map((slide, index) => (

@@ -75,6 +75,8 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      {/* <div className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white"> */}
+
       {/* Animated Hero Section */}
       <section className="relative overflow-hidden">
         <motion.div

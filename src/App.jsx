@@ -23,24 +23,26 @@ import Calendar from "./pages/Calender";
 const App = () => {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/newsevents" element={<NewsEventsPage />} />
-          <Route path="/admissions" element={<AdmissionsPage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/academics" element={<Academics />} />
-          <Route path="/academics/curriculum" element={<Curriculum />} />
-          <Route path="/academics/departments" element={<Departments />} />
-          <Route path="/academics/calendar" element={<Calendar />} />
-          <Route path="/about/history" element={<HistoryPage />} />
-          <Route path="/about/mission" element={<MissionPage />} />
-          <Route path="/about/facilities" element={<FacilitiesPage />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <div className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/newsevents" element={<NewsEventsPage />} />
+            <Route path="/admissions" element={<AdmissionsPage />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/academics" element={<Academics />} />
+            <Route path="/academics/curriculum" element={<Curriculum />} />
+            <Route path="/academics/departments" element={<Departments />} />
+            <Route path="/academics/calendar" element={<Calendar />} />
+            <Route path="/about/history" element={<HistoryPage />} />
+            <Route path="/about/mission" element={<MissionPage />} />
+            <Route path="/about/facilities" element={<FacilitiesPage />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
     </>
   );
 };
