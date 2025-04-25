@@ -14,9 +14,11 @@ import {
   ClipboardListIcon,
   BookOpenIcon,
 } from "@heroicons/react/outline";
+import Sidebar from "./Sidebar";
+import TopNavbar from "./TopNavBar";
 
 const AppLayout = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [activeNav, setActiveNav] = useState("dashboard");
 
   // Mock notification count
@@ -24,54 +26,12 @@ const AppLayout = () => {
 
   return (
     <div className="flex h-screen bg-gray-50">
-      {/* Mobile sidebar */}
-      <div
-        className={`fixed inset-0 z-40 lg:hidden ${
-          sidebarOpen ? "block" : "hidden"
-        }`}
-      >
-        <div
-          className="fixed inset-0 bg-gray-600 bg-opacity-75"
-          onClick={() => setSidebarOpen(false)}
-        ></div>
-        <div className="relative flex flex-col w-64 h-full bg-indigo-700">
-          <div className="flex items-center justify-between h-16 px-4 bg-indigo-800">
-            <div className="flex items-center">
-              <AcademicCapIcon className="w-8 h-8 text-white" />
-              <span className="ml-2 text-xl font-semibold text-white">
-                EduManage
-              </span>
-            </div>
-            <button
-              type="button"
-              className="p-1 rounded-md text-indigo-200 hover:text-white focus:outline-none"
-              onClick={() => setSidebarOpen(false)}
-            >
-              <XIcon className="w-6 h-6" />
-            </button>
-          </div>
-          <nav className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`flex items-center px-4 py-3 text-sm font-medium rounded-md ${
-                  activeNav === item.name.toLowerCase()
-                    ? "bg-indigo-800 text-white"
-                    : "text-indigo-100 hover:bg-indigo-600 hover:bg-opacity-75"
-                }`}
-                onClick={() => setActiveNav(item.name.toLowerCase())}
-              >
-                <item.icon className="flex-shrink-0 w-5 h-5 mr-3" />
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
-
+      <Sidebar
+        collapsed={sidebarCollapsed}
+        setCollapsed={setSidebarCollapsed}
+      />
       {/* Static sidebar for desktop */}
-      <div className="hidden lg:flex lg:flex-shrink-0">
+      {/* <div className="hidden lg:flex lg:flex-shrink-0">
         <div className="flex flex-col w-64 bg-indigo-700">
           <div className="flex items-center justify-center h-16 px-4 bg-indigo-800">
             <div className="flex items-center">
@@ -99,12 +59,12 @@ const AppLayout = () => {
             ))}
           </nav>
         </div>
-      </div>
+      </div> */}
 
       {/* Main content */}
       <div className="flex flex-col flex-1 overflow-hidden">
         {/* Top navigation */}
-        <header className="flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200 lg:px-6">
+        {/* <header className="flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200 lg:px-6">
           <div className="flex items-center">
             <button
               type="button"
@@ -141,7 +101,13 @@ const AppLayout = () => {
               </button>
             </div>
           </div>
-        </header>
+        </header> */}
+        <TopNavbar
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
 
         {/* Main content area */}
         <main className="flex-1 overflow-auto bg-gray-50 focus:outline-none">

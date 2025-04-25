@@ -8,7 +8,7 @@ import {
   FaMoon,
   FaSun,
 } from "react-icons/fa";
-import { useTheme } from "../context/Themecontext";
+import { useTheme } from "../../context/Themecontext";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
