@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import UserRoutes from "./routes/UserRoutes";
+import AdminRoutes from "./routes/AdminRoutes";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/*" element={<UserRoutes />} />
+          <Route path="/admin/*" element={<AdminRoutes />} />
         </Routes>
       </Router>
     </>
