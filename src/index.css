@@ -10,3 +10,31 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
+/* Add smooth transitions for sidebar and content */
+.sidebar-transition {
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.content-transition {
+  transition: margin 0.3s ease-in-out;
+}
+/* Ensure proper stacking context */
+.sidebar {
+  z-index: 30;
+}
+
+.top-navbar {
+  z-index: 40;
+}
+
+/* Smooth transitions */
+.main-content {
+  transition: margin 0.3s ease-in-out;
+}
+
+/* Mobile overflow prevention */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
